@@ -4,11 +4,25 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<script type="text/javascript" src="js/util/common-util.js" ></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script>
+			
+			
+			function caculate(){
+				var input1 =  $("#input1").val();
+				var input2 = getfilesize(input1);
+				$("#input2").val(input2);
+			}
+			
+		</script>
+		
 	</head>
 
 	<body>
-		
-
+		<input id="input1" name="input1" />
+		<button title="计算" onclick="caculate()">计算</button>
+		<input id="input2" name="input2" />
 	</body>
 
 </html>

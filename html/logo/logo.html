@@ -1,0 +1,51 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>logo</title>
+		<style>
+			.canvas-wrapper {
+				position: relative;
+				width: 600px;
+				height: 600px;
+				border: 1px solid black;
+			}
+			
+			.canvas {
+				width: 400px;
+				height: 400px;
+			}
+			
+			#canvas-1 {
+				background-color: #058;
+				top: 0;
+				left: 0;
+			}
+			
+			#canvas-2 {
+				background-color: red;
+				top: 200px;
+				left: 200px;
+			}
+			
+			.canvas {
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="canvas-wrapper">
+			<canvas id="canvas-1" class="canvas"></canvas>
+			<canvas id="canvas-2" class="canvas"></canvas>
+		</div>
+
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			ctx.fillStyle = "#FF0000";
+			ctx.fillRect(0, 0, 150, 75);
+		</script>
+	</body>
+
+</html>

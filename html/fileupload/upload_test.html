@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../plugins/jquery/jquery.js"></script>
+		<script>
+			$(function() {
+				$("#button").click(function() {
+					//构建formData
+					var formData = new FormData();
+					//文件部分
+					var file = document.getElementById("file").files[0];
+					formData.append("file", file);
+					//json部分
+					var param = JSON.stringify({
+						"businessId": "240",
+						"businessCode": "320"
+					});
+					//这里包装 可以直接转换成对象
+					formData.append('param', new Blob([param], {
+						type: "application/json"
+					}));
+
+					$.ajax({
+						url: "http://127.0.0.1:6060/v1/filecenter/uploadfile/param",
+						type: "post",
+						//忽略contentType
+						contentType: false,
+						//取消序列换 formData本来就是序列化好的
+						processData: false,
+						dataType: "json",
+						data: formData,
+						success: function(response) {
+							alert(response);
+						},
+						error: function() {
+
+						}
+					});
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<input type="file" id="file" name="file" />
+		<button id="button" name="">上传</button>
+	</body>
+
+</html>

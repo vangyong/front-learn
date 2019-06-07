@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//三点运算-作为参数
+//			let fun1=function(...args){
+//			 for(let arg of args){
+//			  console.log(arg);
+//			 };
+//			 console.log(args)
+//			};
+//			
+//			fun1('a','b','c'); //a b c,[a,b,c]
+//			fun1(1,2); //1 2,[1,2] 
+//			
+//			let fun2=function(arr,...args){
+//			 console.log(arr);
+//			 console.log(args);
+//			};
+//			fun2(1,2,3); //1, [2,3]
+//			fun2(1); //1
+			
+			//三点运算-作为拓展运算符
+			
+			let arr=[1,2,3];
+			console.log(...arr); //1, 2, 3返回数组中的各项
+			
+			let a=[2,3];
+			console.log(1,...a,4); //1,2,3,4扩展运算符可以放在中间
+			
+			let divs=document.querySelectorAll('div');
+			[...divs];//Array[300]，[]可以将divs转为数组解构；
+			console.log(...divs);//div1,div2....遍历divs各项
+			
+			let map=new Map([[1,'a'],[2,'b'],[3,'c']]);
+			console.log(...[map.keys]); //返回[1,2,3],属性数组；
+			console.log(...[map.values]); //返回[a,b,c],value数组
+			
+			console.log([...'wbiokr']); //["w", "b", "i", "o", "k", "r"]遍历字符串，返回各个字符；
+			
+			let str='abc';
+			console.log(['aaa',...str,'ccc']);//[aaa, a, b, c, ccc]扩展运算符位置比较任性
+			
+			
+		</script>
+	</body>
+</html>

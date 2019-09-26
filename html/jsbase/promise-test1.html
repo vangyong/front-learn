@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			
+			var promise1 = new Promise(function(resolve, reject) {
+//				setTimeout(function() {
+//					resolve('foo');
+//				}, 3000);
+				resolve('foo');
+			});
+			promise1.then(function(value) {
+				alert('then')
+				console.log(value);
+				// foo
+			});
+			console.log(promise1);
+			//  [object Promise]
+			
+		</script>
+	</body>
+
+</html>

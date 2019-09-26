@@ -1,0 +1,69 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>reactlogo</title>
+		<style>
+			.canvas-wrapper {
+				position: relative;
+				width: 600px;
+				height: 600px;
+				border: 1px solid black;
+			}
+			
+			.canvas {
+				width: 400px;
+				height: 400px;
+			}
+			
+			#canvas-1 {
+				background-color: #058;
+				top: 0;
+				left: 0;
+			}
+			
+			#canvas-2 {
+				background-color: red;
+				top: 200px;
+				left: 200px;
+			}
+			
+			.canvas {
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;"></canvas>
+
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			
+			ctx.beginPath();
+			ctx.arc(300,300,40,0,2*Math.PI);
+			ctx.fillStyle="#058";
+			ctx.strokeStyle="#FF4040";
+			ctx.fill();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.lineWidth = 10;
+			ctx.ellipse(300,300,200,50,0,0,Math.PI*2);
+            ctx.strokeStyle="#D15FEE";
+            ctx.stroke();
+            
+            	ctx.beginPath();
+			ctx.ellipse(300,300,200,50,20,0,Math.PI*2);
+            ctx.stroke();
+            
+            ctx.beginPath();
+			ctx.ellipse(300,300,200,50,40,0,Math.PI*2);
+            ctx.stroke();
+            
+			
+		</script>
+	</body>
+
+</html>

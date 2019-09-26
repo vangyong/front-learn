@@ -1,0 +1,96 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>mylogo</title>
+	</head>
+
+	<body>
+		<canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;"></canvas>
+
+		<script>
+			
+			//画多边形
+			var drawPolygon = function(ctx, conf){
+			    var x = conf && conf.x || 0;  //中心点x坐标
+			    var y = conf && conf.y || 0;  //中心点y坐标
+			    var num = conf && conf.num || 3;   //图形边数
+			    var r = conf && conf.r || 100;   //图形的半径
+			    var width = conf && conf.width || 5; //多边形线的宽度
+			    var strokeStyle = conf && conf.strokeStyle; //边线的颜色
+			    var fillStyle = conf && conf.fillStyle; //填充的颜色
+			    //开始路径
+			    ctx.beginPath();
+			    var startX = x + r * Math.cos(2*Math.PI*0/num);
+			    var startY = y + r * Math.sin(2*Math.PI*0/num);
+			    ctx.moveTo(startX, startY);
+			    for(var i = 1; i <= num; i++) {
+			        var newX = x + r * Math.cos(2*Math.PI*i/num);
+			        var newY = y + r * Math.sin(2*Math.PI*i/num);
+			        ctx.lineTo(newX, newY);
+			    }
+			    ctx.closePath();
+			    //路径闭合
+			    if(strokeStyle) {
+			        ctx.strokeStyle = strokeStyle;
+			        ctx.lineWidth = width;
+			        ctx.lineJoin = 'round';
+			        ctx.stroke();
+			    }
+			    if(fillStyle) {
+			        ctx.fillStyle = fillStyle;
+			        ctx.fill();
+			    }
+			}
+			
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			
+			ctx.beginPath();
+			ctx.arc(300,300,40,0,2*Math.PI);
+			ctx.fillStyle="#058";
+			ctx.strokeStyle="#FF4040";
+			ctx.fill();
+			ctx.stroke();
+			
+//			ctx.beginPath();
+//			ctx.lineWidth = 10;
+//			ctx.ellipse(300,300,200,50,0,0,Math.PI*2);
+//          ctx.strokeStyle="#D15FEE";
+//          ctx.stroke();
+            
+            
+            drawPolygon(ctx, {
+            		x:300,
+            		y:300,
+			    num: 6,
+			    r: 100,
+			    strokeStyle: 'blue',
+			    //fillStyle: '#9da'
+			})
+            
+//           drawPolygon(ctx, {
+//          		x:400,
+//          		y:400,
+//			    num: 3,
+//			    r: 100,
+//			    strokeStyle: 'blue',
+//			    //fillStyle: '#9da'
+//			})
+
+            	ctx.beginPath();
+			ctx.ellipse(300,300,200,40,0,0,Math.PI*2);
+            ctx.stroke();
+            
+            	ctx.beginPath();
+			ctx.ellipse(300,300,200,40,20,0,Math.PI*2);
+            ctx.stroke();
+            
+            ctx.beginPath();
+			ctx.ellipse(300,300,200,40,40,0,Math.PI*2);
+            ctx.stroke();
+			
+		</script>
+	</body>
+
+</html>

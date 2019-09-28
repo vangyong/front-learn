@@ -2,14 +2,15 @@ var Point = function(x, y) {
 	this.x = x;
 	this.y = y;
 };
-var Polygon = function(centerX, centerY, radius, sides, startAngle, strokeStyle, fillStyle, filled) {
+var Polygon = function(centerX, centerY, radius, sides, startAngle, strokeStyle,lineWidth, fillStyle, filled) {
 	this.x = centerX; //外接圆心x坐标
 	this.y = centerY;
 	this.radius = radius; //外接圆半径
 	this.sides = sides; //边数
 	this.startAngle = startAngle; //开始角度
-	this.strokeStyle = strokeStyle;
-	this.fillStyle = fillStyle;
+	this.strokeStyle = strokeStyle; //线条颜色
+	this.lineWidth = lineWidth; //线条宽度
+	this.fillStyle = fillStyle; //填充颜色
 	this.filled = filled;
 };
 Polygon.prototype = {
@@ -36,6 +37,7 @@ Polygon.prototype = {
 		context.save();
 		this.createPath(context);
 		context.strokeStyle = this.strokeStyle;
+		context.lineWidth = this.lineWidth;
 		context.stroke();
 		context.restore();
 	},

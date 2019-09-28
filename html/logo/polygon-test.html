@@ -1,0 +1,24 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>polygon-test</title>
+		<script src='../../js/logo/polygon.js'></script>
+	</head>
+
+	<body>
+
+		<canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;"></canvas>
+
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			var polygon = new Polygon(300, 300, 60, 5, 0, '#FF4040', 5, '#4B0082', 'filled')
+			polygon.createPath(ctx);
+			polygon.stroke(ctx);
+//			polygon.fill(ctx);
+		</script>
+
+	</body>
+
+</html>

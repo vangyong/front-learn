@@ -15,21 +15,26 @@
 			var ctx = c.getContext("2d");
 
 			ctx.beginPath();
-			ctx.arc(300, 300, 30, 0, 2 * Math.PI);
+			ctx.arc(300, 300, 60, 0, 2 * Math.PI);
 			ctx.strokeStyle = "#FF4040";
 			ctx.lineWidth = 3;
 			ctx.stroke();
 			
-			var polygon = new Polygon(300, 300, 60, 6, 0, '#FF4040', 3, '#4B0082', 'filled')
-			polygon.createPath(ctx);
-			polygon.stroke(ctx);
+//			var polygon = new Polygon(300, 300, 120, 6, 0, '#FF4040', 3, '#4B0082', 'filled')
+//			polygon.createPath(ctx);
+//			polygon.stroke(ctx);
 			
 			
 //			var polygon = new Polygon(300, 300, 60, 6, 22.5, '#FF4040', 3, '#4B0082', 'filled')
 //			polygon.createPath(ctx);
 //			polygon.stroke(ctx);
 			
-			var polygon = new Polygon(250, 250, 60, 3, 0, '#FF4040', 3, '#4B0082', 'filled')
+			var polygon = new Polygon(300, 300, 240, 3, 30, '#FF4040', 3, '#4B0082', 'filled')
+			polygon.createPath(ctx);
+			polygon.stroke(ctx);
+			
+			
+			var polygon = new Polygon(300, 300, 240, 3, 90, '#FF4040', 3, '#4B0082', 'filled')
 			polygon.createPath(ctx);
 			polygon.stroke(ctx);
 			

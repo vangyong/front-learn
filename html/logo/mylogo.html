@@ -45,12 +45,12 @@
 			var c = document.getElementById("myCanvas");
 			var ctx = c.getContext("2d");
 
-			ctx.beginPath();
-			ctx.arc(300, 300, 40, 0, 2 * Math.PI);
-			ctx.fillStyle = "#058";
-			ctx.strokeStyle = "#FF4040";
-			ctx.fill();
-			ctx.stroke();
+//			ctx.beginPath();
+//			ctx.arc(300, 300, 40, 0, 2 * Math.PI);
+//			ctx.fillStyle = "#058";
+//			ctx.strokeStyle = "#FF4040";
+//			ctx.fill();
+//			ctx.stroke();
 
 			//			ctx.beginPath();
 			//			ctx.lineWidth = 10;
@@ -62,21 +62,23 @@
 				x: 300,
 				y: 300,
 				num: 6,
-				r: 100,
+				r: 40,
 				strokeStyle: 'blue',
 				//fillStyle: '#9da'
 			})
 
+			//ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise);
+
 			ctx.beginPath();
-			ctx.ellipse(300, 300, 200, 40, 0, 0, Math.PI * 2);
+			ctx.ellipse(300, 300, 100, 40, 0*Math.PI/180, 0, Math.PI * 2,true);
 			ctx.stroke();
 
 			ctx.beginPath();
-			ctx.ellipse(300, 300, 200, 40, 20, 0, Math.PI * 2);
+			ctx.ellipse(300, 300, 100, 40, 60*Math.PI/180, 0, Math.PI * 2,true);
 			ctx.stroke();
 
 			ctx.beginPath();
-			ctx.ellipse(300, 300, 200, 40, 40, 0, Math.PI * 2);
+			ctx.ellipse(300, 300, 100, 40, 120*Math.PI/180, 0, Math.PI * 2,true);
 			ctx.stroke();
 		</script>
 	</body>

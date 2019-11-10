@@ -13,10 +13,27 @@
 		<script>
 			var c = document.getElementById("myCanvas");
 			var ctx = c.getContext("2d");
-			var polygon = new Polygon(300, 300, 60, 5, 0, '#FF4040', 5, '#4B0082', 'filled')
+			var polygon = new Polygon(300, 300, 40, 6, 0, '#1A1A1A', 0, '#4B0082', 'filled')
 			polygon.createPath(ctx);
 			polygon.stroke(ctx);
 //			polygon.fill(ctx);
+
+			var polygon2 = new Polygon(300, 300, 20, 6, 0, '#1A1A1A', 0, '#4B0082', 'filled')
+			polygon2.createPath(ctx);
+			polygon2.stroke(ctx);
+
+
+			ctx.beginPath();
+			ctx.ellipse(300, 300, 100, 40, 0*Math.PI/180, 0, Math.PI * 2,true);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.ellipse(300, 300, 100, 40, 60*Math.PI/180, 0, Math.PI * 2,true);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.ellipse(300, 300, 100, 40, 120*Math.PI/180, 0, Math.PI * 2,true);
+			ctx.stroke();
 		</script>
 
 	</body>

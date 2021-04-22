@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>onlyoffice</title>
+		
+	</head>
+
+	<body>
+		<div id="placeholder"></div>
+		<script type="text/javascript" src="http://192.168.101.138:9000/web-apps/apps/api/documents/api.js"></script>
+		<script>
+			var docEditor = new DocsAPI.DocEditor("placeholder", {
+			        "document": {
+			            "fileType": "docx",
+			            "permissions": {
+			                "edit": true,
+			            },
+			            "key": "C8D7FB890BAC496FB0D27B163EDB88BDAA",
+			            "title": "zf张飞.docx",
+			            "url": "http://192.168.101.105:8080/files/download/1",
+			        },
+					"editorConfig": {
+							"lang": "zh-CN",
+					        "callbackUrl": "http://192.168.101.105:8080/docx/save",
+							"embedded": {
+									"saveUrl":"http://192.168.101.105:8080/files/download/1",
+									"shareUrl ": "http://192.168.101.105:8080/files/download/1",
+									"toolbarDocked": "top",
+								},
+					},
+			        "height": "1000px",
+			        "width": "100%"
+			    });
+		</script>
+	</body>
+
+</html>
